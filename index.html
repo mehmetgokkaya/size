@@ -1,6 +1,25 @@
 <html> 
-  
 <head> 
+<meta charset="utf-8">
+<title>Unicorn Spa Wellness Reservation</title>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="http://www.unicornspawellness.com/css/css/styl.css">
+<link rel="stylesheet" type="text/css" href="http://www.unicornspawellness.com/src/jquery.ptTimeSelect.css" />
+<script type="text/javascript" src="http://www.unicornspawellness.com/src/jquery.ptTimeSelecct.js"></script>
+	
+    <style>
+.ui-draggable, .ui-droppable {
+	background-position: top;
+}
+    </style>
+    <script>
+	$( function() {
+		$( "#datepicker" ).datepicker();
+	} );
+	</script>
+
    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css">
     <link rel="stylesheet" href="http://bootsnipp.com/css/bootsnipp.min.css?ver=42f321feccec9b5774d234a7ace874c2">
@@ -91,10 +110,97 @@
 
 <div id="search">
     <button type="button" class="close">×</button>
-    <form>
-        <input type="search" value="" placeholder="type keyword(s) here" />
-        <button type="submit" class="btn btn-primary">Search</button>
-    </form>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript">
+var ote1				= new Array("masaj 1", "masaj 2");
+var ote2				= new Array("masaj 2-1", "masaj 2-2");
+
+function set_player() {
+  var select_otel = document.arama.otel;
+  var select_masaj = document.arama.masaj;
+  var selected_otel = select_otel.options[select_otel.selectedIndex].value;
+
+  select_masaj.options.length=0;
+  if (selected_otel == "otel 1"){
+    for(var i=0; i<ote1.length; i++)
+    select_masaj.options[select_masaj.options.length] = new Option(ote1[i]);
+  }
+  if (selected_otel == "otel 2"){
+    for(var i=0; i<ote2.length; i++)
+    select_masaj.options[select_masaj.options.length] = new Option(ote2[i]);
+  }
+}
+</script>
+<div id="contact-form">
+<form name="arama" method="POST" action="//formspree.io/mehmet@mehmetgokkaya.com">
+    <fieldset style="width: 20%;">
+<table>
+<tr>
+
+<td><label  for="name" style="float: left;">Name:</label><input style="float: right;" type="text" name="name" placeholder="Full Name" title="Enter your name" class="required"><td/>
+</tr>
+<tr><td><label style="float: left;" style="float: left;" for="Phone">Phone:</label><input style="float: right;" type="text" name="phone" placeholder="ex. (555) 555-5555"><td/></tr>
+<tr><td><label style="float: left;" for="email">E-mail:</label><input style="float: right;" type="email" name="email" placeholder="mail@mail.com"></td></tr>
+    
+<tr><td><label style="float: left;" for="Room Number">Room Number:</label><input style="float: right;" type="Room Number" name="Room Number" placeholder="xxxx"></td></tr>
+<tr><td>
+<tr><td><label style="float: left;" for="date">Date:</label><input style="float: right;" name="date" type="text" id="datepicker"></td></tr>
+ <datepicker type="grid" value="2007-03-26"/>
+    <tr><td><label style="float: left;" for="Time">Time:</label><input style="float: right;" name="time" value="" /></td></tr>
+
+    <tr><td><label style="float: left;" for="Question/Comment">Question/Comment:</label><input style="float: right;" type="Mesajınız" name="Mesajınız" placeholder=""></td></tr>
+ 
+    <td style="float: left;">Otel:<select type="text" name="otel" onchange="set_player()" style="float: right;width: 400px;">
+    <option style="float: right;" selected="selected" style="background-color:#FFCC00;">Please Chose</option>
+    <option type="text" value="otel 1">Otel 1</option>
+    <option type="text" value="otel 2">Otel 2</option>
+    </select>
+    </td>
+    <tr><td style="float: left;">Massage:<select style="float: right;width: 400px;" type="text" name="masaj">
+    <option type="text" style="float: right;">Select Hotel First</option>
+    </select>
+    </td>
+    </tr>
+      <td>
+        <center><input type="submit" name="button" id="button" value="Send" /></center>
+      </td>
+  </table>
+    </fieldset>
+	<script type="text/javascript">
+    $(document).ready(function(){
+        $('input[name="time"]').ptTimeSelect();
+    });
+</script>
+</form>
+</div>
+<script>
+	    $('#sample4 input').ptTimeSelect({
+	onBeforeShow: function(i){
+		$('#sample4 #sample4-data').append('onBeforeShow(event) Input field: ' + $(i).attr('name') + "
+");
+	},
+	onClose: function(i) {
+		$('#sample4 #sample4-data').append('onClose(event)Time selected:' + $(i).val() + "
+");
+	}
+	
+});
+	    
+</script>	    
+	    
+<script src="js/modernizr-min.js"></script>
+<script>
+if (!Modernizr.input.placeholder){
+      $('input[placeholder], textarea[placeholder]').placeholder();
+}
+</script>
+
+	    <div id="altkısım">
+	<p>Opening hours of all our spa centers: 09:00</p>
+	<p>Closing hours of all our spa centers: 20:00</p>
+	<p>Unicorn Spa Wellness Bir <a href='http://unicorncompany.com.tr' target="_blank">Unicorn Company</a> Kuruluşudur.</p>
+    version 0.2.7
+	    </div>
 </div>
      <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
@@ -120,4 +226,4 @@
 	</script>
   </body> 
 </html>
-versiyon 2
+versiyon 3
