@@ -36,7 +36,7 @@
     padding: 40px 0px;   
 }
 
-#Rezervasyon {
+#rezervasyon {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -59,7 +59,7 @@
     opacity: 0;
 }
 
-#Rezervasyon.open {
+#rezervasyon.open {
     -webkit-transform: translate(0px, 0px) scale(1, 1);
     -moz-transform: translate(0px, 0px) scale(1, 1);
 	-o-transform: translate(0px, 0px) scale(1, 1);
@@ -68,7 +68,7 @@
     opacity: 1;
 }
 
-#Rezervasyon input[type="Rezervasyon"] {
+#rezervasyon input[type="rezervasyon"] {
     position: absolute;
     top: 50%;
     width: 100%;
@@ -84,7 +84,7 @@
     padding-right: 30px;
     outline: none;
 }
-#Rezervasyon .btn {
+#rezervasyon .btn {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -94,7 +94,7 @@
   border: black;
 
 }
-#Rezervasyon .close {
+#rezervasyon .close {
     position: fixed;
     top: 15px;
     right: 15px;
@@ -147,13 +147,13 @@
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script>
 		$(function () {
-    $('a[href="#Rezervasyon"]').on('click', function(event) {
+    $('a[href="#rezervasyon"]').on('click', function(event) {
         event.preventDefault();
-        $('#Rezervasyon').addClass('open');
-        $('#Rezervasyon > form > input[type="Rezervasyon"]').focus();
+        $('#rezervasyon').addClass('open');
+        $('#rezervasyon > form > input[type="rezervasyon"]').focus();
     });
     
-    $('#Rezervasyon, #Rezervasyon button.close').on('click keyup', function(event) {
+    $('#rezervasyon, #rezervasyon button.close').on('click keyup', function(event) {
         if (event.target == this || event.target.className == 'close' || event.keyCode == 27) {
             $(this).removeClass('open');
         }
