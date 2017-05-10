@@ -26,84 +26,59 @@
 		$( "#datepicker" ).datepicker();
 	} );
 	</script>
-
-   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css">
-    <link rel="stylesheet" href="http://bootsnipp.com/css/bootsnipp.min.css?ver=42f321feccec9b5774d234a7ace874c2">
 	
 	<style>
 		body {
     padding: 40px 0px;   
 }
-
-#rezervasyon {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 100%;
+		.overlay {
     height: 100%;
-    background-color: white;
-    
-    -webkit-transition: all 0.5s ease-in-out;
-	-moz-transition: all 0.5s ease-in-out;
-	-o-transition: all 0.5s ease-in-out;
-	-ms-transition: all 0.5s ease-in-out;
-	transition: all 0.5s ease-in-out;
-
-    -webkit-transform: translate(0px, -100%) scale(0, 0);
-	-moz-transform: translate(0px, -100%) scale(0, 0);
-	-o-transform: translate(0px, -100%) scale(0, 0);
-	-ms-transform: translate(0px, -100%) scale(0, 0);
-	transform: translate(0px, -100%) scale(0, 0);
-    
-    opacity: 0;
-}
-
-#rezervasyon.open {
-    -webkit-transform: translate(0px, 0px) scale(1, 1);
-    -moz-transform: translate(0px, 0px) scale(1, 1);
-	-o-transform: translate(0px, 0px) scale(1, 1);
-	-ms-transform: translate(0px, 0px) scale(1, 1);
-	transform: translate(0px, 0px) scale(1, 1); 
-    opacity: 1;
-}
-
-#rezervasyon input[type="rezervasyon"] {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    color: rgb(255, 255, 255);
-    background: rgba(0, 0, 0, 0);
-    font-size: 60px;
-    font-weight: 300;
-    text-align: center;
-    border: 0px;
-    margin: 0px auto;
-    margin-top: -51px;
-    padding-left: 30px;
-    padding-right: 30px;
-    outline: none;
-}
-#rezervasyon .btn {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: 61px;
-    margin-left: -45px;
-  	background-color: limegreen;
-  border: black;
-
-}
-#rezervasyon .close {
+    width: 0;
     position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+    font-size: 40px;
     top: 15px;
-    right: 15px;
-    color: #fff;
-	background-color: limegreen;
-	border-color: green;
-	opacity: 1;
-	padding: 10px 17px;
-	font-size: 27px;
+    right: 35px;
+  }
 }
 	</style>
 </head>
@@ -116,8 +91,6 @@
 </div>
 <div id="Content" class="wrapper" style="padding: 248px 0 0 0;"> 
 	<center><h2 class="intro">Çok Yakında Hizmetinizde Olacağız.</h2></center>
-	<center style="position: fixed;bottom: 0;left: 0;background-color: #f6ab12;width: 100%;height: 56px;" ><li><a href="#Rezervasyon">Rezervasyon</a></li></center>
-
 <div id="subscribe"> 
 	<div id="socialIcons">
 		<ul> 
@@ -132,39 +105,32 @@
 <center><span class='email'>iletişim:<a href="/cdn-cgi/l/email-protection#056c6b636a45706b6c666a776b767564726069696b6076762b666a68"><span class="__cf_email__" data-cfemail="244d4a424b64514a4d474b564a575445534148484a4157570a474b49">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></span></center>
 	</div>
 	  </div>
+	  <div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+<iframe scrolling="no" allowtransparency="true" style="min-height:500px; width: 500px; height:inherit; overflow:auto;" marginwidth="0" marginheight="0" src="http://www.unicornspawellness.com/rezerve.html" frameborder="0" width="100%">
+<p>Your browser does not support iframes. The contact form cannot be displayed. Please use another contact method (phone, fax etc)</p>
+</iframe>
+  </div>
+</div>
+
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Rezervasyon</span>
+
+<script>
+function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+}
+</script>
+	  
+	  
 <div class="container">
 
 </div>
 
-
-<center><div id="search" style='z-index:11;'>
-	<button type="button" class="close">×</button>
-    <center><iframe scrolling="no" allowtransparency="true" style="min-height:500px; width: 500px; height:inherit; overflow:auto;"  marginwidth="0" marginheight="0" src="http://www.unicornspawellness.com/rezerve.html" frameborder="0" width="100%">
-<p>Your browser does not support iframes. The contact form cannot be displayed. Please use another contact method (phone, fax etc)</p>
-</iframe></center>
-	  </div></center>
-     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script>
-		$(function () {
-    $('a[href="#rezervasyon"]').on('click', function(event) {
-        event.preventDefault();
-        $('#rezervasyon').addClass('open');
-        $('#rezervasyon > form > input[type="rezervasyon"]').focus();
-    });
-    
-    $('#rezervasyon, #rezervasyon button.close').on('click keyup', function(event) {
-        if (event.target == this || event.target.className == 'close' || event.keyCode == 27) {
-            $(this).removeClass('open');
-        }
-    });
-    
-    $('form').submit(function(event) {
-        event.preventDefault();
-        return false;
-    })
-});
-	</script>
   </body> 
 </html1>
-versiyon 9
+versiyon 10
