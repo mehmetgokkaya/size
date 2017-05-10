@@ -36,7 +36,7 @@
     padding: 40px 0px;   
 }
 
-#search {
+#Rezervasyon {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -59,7 +59,7 @@
     opacity: 0;
 }
 
-#search.open {
+#Rezervasyon.open {
     -webkit-transform: translate(0px, 0px) scale(1, 1);
     -moz-transform: translate(0px, 0px) scale(1, 1);
 	-o-transform: translate(0px, 0px) scale(1, 1);
@@ -68,7 +68,7 @@
     opacity: 1;
 }
 
-#search input[type="search"] {
+#Rezervasyon input[type="Rezervasyon"] {
     position: absolute;
     top: 50%;
     width: 100%;
@@ -84,7 +84,7 @@
     padding-right: 30px;
     outline: none;
 }
-#search .btn {
+#Rezervasyon .btn {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -94,7 +94,7 @@
   border: black;
 
 }
-#search .close {
+#Rezervasyon .close {
     position: fixed;
     top: 15px;
     right: 15px;
@@ -116,7 +116,7 @@
 </div>
 <div id="Content" class="wrapper" style="padding: 248px 0 0 0;"> 
 	<center><h2 class="intro">Çok Yakında Hizmetinizde Olacağız.</h2></center>
-	<center style="position: fixed;bottom: 0;left: 0;background-color: #f6ab12;width: 100%;height: 56px;" ><li><a href="#search">Search</a></li></center>
+	<center style="position: fixed;bottom: 0;left: 0;background-color: #f6ab12;width: 100%;height: 56px;" ><li><a href="#Rezervasyon">Rezervasyon</a></li></center>
 
 <div id="subscribe"> 
 	<div id="socialIcons">
@@ -147,13 +147,13 @@
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script>
 		$(function () {
-    $('a[href="#search"]').on('click', function(event) {
+    $('a[href="#Rezervasyon"]').on('click', function(event) {
         event.preventDefault();
-        $('#search').addClass('open');
-        $('#search > form > input[type="search"]').focus();
+        $('#Rezervasyon').addClass('open');
+        $('#Rezervasyon > form > input[type="Rezervasyon"]').focus();
     });
     
-    $('#search, #search button.close').on('click keyup', function(event) {
+    $('#Rezervasyon, #Rezervasyon button.close').on('click keyup', function(event) {
         if (event.target == this || event.target.className == 'close' || event.keyCode == 27) {
             $(this).removeClass('open');
         }
